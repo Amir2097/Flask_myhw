@@ -1,41 +1,42 @@
 import requests
 
-## Регистариция пользователя:
+# Регистариция пользователя:
 
-# response = requests.post('http://127.0.0.1:5000/register', json={'name': 'Vova', 'email_address': 'Vovan@yndex.ru',
-#                                                                  'password': 'Vova!@1234'})
-## Вход:
+# response = requests.post('http://127.0.0.1:5000/register/', json={'email': 'Ali@yndex.ru',
+#                                                                  'password': 'Ali!@1234'})
 
-# response = requests.post('http://127.0.0.1:5000/login', json={'name': 'Vova', 'email_address': 'Vovan@yndex.ru',
-#                                                               'password': 'Vova!@1234'})
+# Вход:
+#
+# response = requests.post('http://127.0.0.1:5000/login/', json={'email': 'Ali@yndex.ru',
+#                                                               'password': 'Ali!@1234'})
 ## Получение пользователя и всех его обьявлений по id:
 
-# response = requests.get('http://127.0.0.1:5000/user/1')
+# response = requests.get('http://127.0.0.1:5000/users/1/')
 
 ## Частичное изменение данных пользователя:
 
-# response = requests.patch('http://127.0.0.1:5000/user/1', json={'email_address': 'vladimir@gmai.com'},
-#                           headers={'token': '0e4c42c3-aca3-419b-8b55-68bd7f0031af'})
+# response = requests.patch('http://127.0.0.1:5000/users/1/', json={'email_address': 'ali@gmai.com'},
+#                           headers={'token': '4853d67a-cf79-4b79-87c6-22c51d961042'})
 ## Удаление пользователя:
 
-# response = requests.delete('http://127.0.0.1:5000/user/5', headers={'token': '8170d15d-6c99-4873-90c7-2862a12a2180'})
+# response = requests.delete('http://127.0.0.1:5000/users/1/', headers={'token': '4853d67a-cf79-4b79-87c6-22c51d961042'})
 
 ## Создание обьявления:
 
-# response = requests.post('http://127.0.0.1:5000/ads', json={'ad_header': 'Разработчик Python',
-#                                                             'description': 'Крутое резюме', 'owner_id': 1},
-#                          headers={'token': '0e4c42c3-aca3-419b-8b55-68bd7f0031af'})
+# response = requests.post('http://127.0.0.1:5000/ads/', json={'title': 'Разработчик Python',
+#                                                             'description': 'Крутое резюме for Python', 'owner_id': 1},
+#                          headers={'token': '4853d67a-cf79-4b79-87c6-22c51d961042'})
 ## Получение обьявления по id:
 
-# response = requests.get('http://127.0.0.1:5000/ads/3')
+# response = requests.get('http://127.0.0.1:5000/ads/1/')
 
 ## Частичное изменение обьявления:
 
-# response = requests.patch('http://127.0.0.1:5000/ads/1', json={'description': 'Крутейшее резюме'},
-#                           headers={'token': '0e4c42c3-aca3-419b-8b55-68bd7f0031af'})
+# response = requests.patch('http://127.0.0.1:5000/ads/1/', json={'description': 'Крутейшее резюме'},
+#                           headers={'token': '4853d67a-cf79-4b79-87c6-22c51d961042'})
 ## Удаление обьявления:
 
-# response = requests.delete('http://127.0.0.1:5000/ads/3', headers={'token': '0e4c42c3-aca3-419b-8b55-68bd7f0031af'})
+# response = requests.delete('http://127.0.0.1:5000/ads/3/', headers={'token': '4853d67a-cf79-4b79-87c6-22c51d961042'})
 
 print(response.status_code)
 print(response.json())
